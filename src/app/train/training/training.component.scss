@@ -1,0 +1,60 @@
+ 
+.heading{
+	     text-align: justify;
+         position: relative;
+         left:120px;
+         padding: 2px;
+       }
+       .heading h2{
+         font-size: 20px;
+          font-weight: bold;
+          color: white;
+       }
+       .result{
+          border-style: solid;
+          color:#000000; 
+           border-width: 0.2px; 
+           padding: 10px;
+           width: 100%;
+       }
+      .result h3{
+         color: white;
+         text-align: center;
+        }
+       .box{
+          width: 87%;
+          height: 248px;
+         margin-top: 20px;
+        }
+        button.test{
+          background-color: #00cc99; 
+           width: 60%; 
+         color:white; 
+         font-size:15px; 
+         border-radius:3px;
+           padding: 9px;
+         border-style: none;
+        }
+         button.minimise{
+  
+          width: 60%; 
+          color:white; 
+           font-size:15px; 
+            border-radius:3px;
+           /*padding: 9px;*/
+           border-style: dotted;
+          border-color:#00cc99; 
+           background-color: #333333;
+        }
+      .padding{
+         padding: 20px;
+       } 
+       .line_height{
+         line-height: 40px;
+        }
+.green-dot-button{
+    color: #FFFFFF;
+    border: 1px dashed #21f3b2;
+    line-height: 1.5;
+    padding: 5px 15px;
+}

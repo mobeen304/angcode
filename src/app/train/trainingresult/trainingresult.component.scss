@@ -1,0 +1,217 @@
+  body{
+    background-color: #282828;
+  }
+
+  p,small,b,strong,h1,h2,h3,h4,h5,h6{
+    color: #fff;
+  }
+.menu_tabs{
+  margin-top: 3em;
+}
+table.table.table-condensed tbody tr td span {
+    color: #fff;
+    font-size: 11px;
+}
+h4.pre {
+    margin-bottom: 0;
+}
+.table>tbody>tr>td{
+    /*padding: .75rem;*/
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding-left: 34px !important;
+    padding-right: 34px !important;
+    line-height: 1.42857143;
+    vertical-align: top;
+    color:#fff;
+    border-top: 1px solid #0000;
+    border-bottom: 1px solid #000;
+}
+ul.nav.nav-pills.t_bg li {
+    background-color: #0000;
+}
+ul.nav.nav-pills.t_bg li:hover {
+    background-color: #0000;
+}
+.tli{
+    display:inline-block;
+}
+.nav>li>a{
+  color: #fff;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #eee0;
+    color: #00cc99;
+}
+a.tabas.active{
+    color: #00cc99 !important;
+}
+g.legend {
+    display: none !important;
+}
+
+.nav-pills li.active a, .nav-pills li.active a:focus, .nav-pills>li.active>a:hover {
+    color: #00cc99;
+    background-color: #337ab700;
+}
+.tb_center{
+    border-bottom: 1px solid #ccc;
+}
+ul.nav.nav-pills.t_bg {
+    width: 22%;
+}
+.t_color{
+  color: #07debf !important;
+}
+ button.minimise{    
+  color:white; 
+   font-size:15px; 
+    border-radius:3px;
+   padding: 9px;
+   border-style: dotted;
+  border-color:#00cc99; 
+   background-color: #333333;
+}
+
+ul.t_color li {
+    list-style: none;
+    color: #00c6d2;
+    display: inline-block;
+    width: 90px;
+    padding: 4px 10px;
+    text-align: center;
+    font-size: 13px;
+}
+ul.t_color {
+    padding-left: 0;
+}
+ul.t_color {
+    padding-left: 0;
+    border-bottom: 2px solid #ccc;
+    width: 60%;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+
+ul.predict li {
+    list-style: none;
+    color: #fff;
+    display: inline-block;
+    width: 90px;
+    padding: 4px 10px;
+    text-align: center;
+    font-size: 13px;
+}
+ul.predict {
+    padding-left: 0;
+}
+ul.predict {
+    padding-left: 0;
+    border-bottom: 2px solid #ccc;
+    width: 60%;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+.result_box {
+    border: 1px solid #4e4e4e;
+    padding: 15px 30px;
+    padding-bottom:180px;
+}
+
+.s_{
+  color:#00cc99;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #000000;
+}
+.table td, .table th{
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #00000000;
+    border-bottom: 2px solid #000000;
+}
+.blue{
+    color:#00cc99 !important;
+}
+
+.border_line
+    {
+        height:100%; 
+        width: 40%; 
+        border-style: solid;
+        border-right-style:none;
+        border-top-style:none; 
+        position: absolute;
+        border-color:rgb(166, 166, 166);
+        border-width: 1px;
+        bottom:0;
+    }
+    .border_progress{
+        
+        width:5px;
+        border-style: none;
+        background-color: #21f3b2;
+        position: absolute; 
+        left:2px;
+        bottom:0;
+
+    }
+    .bar{
+        height: 1px;
+        width:20px;
+        border-style: none;
+        background-color:rgb(166, 166, 166);
+        position: absolute;
+      
+    }
+    .perpara{
+    color: #fff;
+    bottom: 0px;
+    left: 4px;
+    font-size: 12px;
+    position: absolute;
+    }
+    .result_box .small{
+    color: rgb(166, 166, 166);
+    }
+.top_1{
+    border: 1px solid;
+    width: 17px;
+    
+    transform: rotate(-40deg);
+    position: absolute;
+    left: 13px;
+    top: -5px;
+    border-color: #717171;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-width: 1px;
+    border-right-style: none;
+    border-width: 1px;
+}
+.top_2{
+    border: 1px solid;
+    width: 17px;
+    transform: rotate(-40deg);
+    position: absolute;
+    left: 13px;
+    top: 3px;
+    border-color: rgb(166, 166, 166);
+    border-bottom-style: none;
+    border-left-style: none;
+    border-width: 1px;
+    border-right-style: none;
+    border-width: 1px;
+}
+.legend{
+    display:none;
+}

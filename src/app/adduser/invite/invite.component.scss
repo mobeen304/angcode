@@ -1,0 +1,56 @@
+ body{
+    background-color: #282828;
+  }
+  .form-control_a {
+    background-color: #282828;
+    color: #fff;
+    border: 1px solid #8c8c8c !important;
+    padding: 4px 10px;
+    width: 100%;
+  }
+  p,small,b,h1,h2,h3,h4,h5,h6{
+    color: #fff;
+  }
+  button.next {
+    background-color: #0000;
+    border: 1px dashed #01bfb6;
+    color: #fff;
+    padding: 4px 21px;
+    margin-top: 30px;
+  }
+  .email {
+    margin-top: 3em;
+}
+.user_mail {
+    margin-bottom: 10px;
+}
+p.f_friend {
+    font-size: 12px;
+}
+.stand {
+    border: 1px solid #8c8c8c;
+    text-align: center;
+    padding: 15px 10px;
+    max-height: 300px;
+    height: 300px;
+    display: block;
+}
+p.f_friend2 {
+    font-size: 12px;
+    line-height: 2.5;
+}
+h2.stnd_i {
+    margin-bottom: -5px;
+    color: #00decb;
+}
+hr{
+  background:#00decb;
+      margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+.feature{
+  font-weight:300;
+}
+.stnd_he{
+margin-bottom:1em;
+ }

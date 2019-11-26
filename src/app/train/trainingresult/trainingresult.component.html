@@ -1,0 +1,150 @@
+ <div class="container menu_tabs">
+      <div class="m_tabs">
+        <div class="tb_center" align="center">
+          <ul class="nav nav-pills t_bg">
+            <li class=""><a data-toggle="pill" class="tabas active" href="#results">RESULTS</a></li>
+            <li><a data-toggle="pill" class="tabas" href="#test">TEST</a></li>
+            <li><a data-toggle="pill" class="tabas" href="#predict" (click)="getPredict()">PREDICT</a></li>
+          </ul>
+        </div>
+        
+        <br>
+        <div class="tab-content">
+          <div id="results" class="tab-pane fade in active show">
+             
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="top_1"></div>
+                <div class="top_2"></div>
+                    <div class="border_line" >
+                    
+          <div class="bar" [ngStyle]="barBottom" style="bottom:0px;">
+               <p class="perpara" style="top:-16px">{{result.PercentageComplete}}%</p>
+          </div> 
+          <div class="border_progress" [ngStyle]="barHeight">
+              </div> 
+              </div>
+          </div>
+             
+              <div class="col-md-4">
+                <div class="result_box">
+                  <h5 class="s_">Status : <span style="color: #eee;">{{result.Status}}</span></h5>
+                  <p><small>ai Models tested: <span class="bold_ttl pull-right">{{result.AIModelsTested}}</span> </small></p>
+                  <p><small>Time Elapsed:  <span class="bold_ttl pull-right">{{result.TimeElapsed | number : '1.2-2'}}</span> </small></p>
+                  <p><small>Average Accuracy:  <span class="bold_ttl pull-right">{{result.AverageAccuracy | number : '1.2-2'}}</span> </small></p>
+                  <p><small>Highest Accuracy:  <span class="bold_ttl pull-right">{{result.HighestAccuracy | number : '1.2-2'}}</span> </small></p>
+                  
+                  
+                </div>
+              </div>
+              <div class="col-md-4">
+                 <p style="text-align: center;">Target Column : Bitcoin Closed</p>
+<angular-d3-donut *ngIf="this.donutChartData.length>0" [width]=300 [outerRadius]=70 [middleText]="per" [middleTextFontSize]="'2em'" [middleTextColor]="'#fff'" [innerRadius]=67 [spreadSlice]=false  [data]="donutChartData" height="300"  (centerImageEvent)="centerImageEvent()"></angular-d3-donut>
+              </div>
+            </div><!--/row-->
+
+             <div align="right" class="padding">
+                   <button type="button" class="minimise" (click)="canceltrain()">Cancel Training</button>
+               </div>
+          </div><!--//results-->
+
+          <div id="test" class="tab-pane fade">
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="pre">Performance</h4>
+                <p> These are results that I saved for testing. </p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="tbleul" >  
+                  <li class="tli" *ngFor="let header of testClmn">
+                
+                 <table class="table table-condensed">
+                   <thead *ngIf="header!='time' ">
+                      <tr *ngIf="header!='Close' && header!='predicted Close'">
+                         <th >{{header}} </th> 
+                      </tr>
+                    </thead>
+                    <thead *ngIf="header=='time'">
+                       <tr>
+                         <th>Timestamp </th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <ng-container *ngIf="header!='Close' && header!='predicted Close'"> 
+                    <tr *ngFor="let values of objectKeys(testVal[header])">
+                         <td *ngIf="header!='time'"><span>${{values}}  </span></td>
+                         <td *ngIf="header=='time'"><span>{{values}}  </span></td>
+                      </tr>  
+                    </ng-container>
+                   </tbody>
+                </table> 
+              </li>
+            </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="tbleul" >  
+                  <li class="tli" *ngFor="let header of testClmn" >
+                <ng-container *ngIf="header=='Close' || header=='predicted Close'">
+                 <table class="table table-condensed">
+                   <thead>
+                     <tr *ngIf="header=='Close' ">
+                         <th class="blue">Actual (close) </th>
+                      </tr>
+                       <tr *ngIf="header=='predicted Close' ">
+                         <th class="blue">Prediction </th>
+                        
+                        </tr>
+                        
+                      
+                    </thead>
+                   
+                    <tbody>
+                    
+
+                       <ng-container > 
+                    <tr *ngFor="let values of objectKeys(testVal[header])">
+                         <td><span>{{values}}  </span></td>
+                      </tr>  
+                    </ng-container>
+                     
+                   </tbody>
+                </table>
+                </ng-container> 
+              </li>
+            </ul>
+              </div>
+
+               
+            
+            </div><!--/row-->
+          </div><!--test-->
+          <div id="predict" class="tab-pane fade">
+            <div class="row">
+              <div class="col-md-12" style="text-align: center;">
+                <h4 class="pre">Live Prediction</h4>
+               <!--  <p> These are results that I saved for testing. </p> -->
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12" align="center">
+                <ul class="t_color">
+                  <li >#8,125.54</li>
+                </ul>
+                <ul class="predict" *ngIf="sData" style="border-bottom: 0px;">
+                  <li *ngFor="let prd of sData">{{prd}}</li>
+                  
+                
+                  
+                </ul>
+              </div>
+            </div><!--/row-->
+          </div><!--/predict-->
+        </div>
+      </div><!--/mrnu_tabs-->
+    </div>

@@ -1,0 +1,106 @@
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="email">
+            <h4>Invite Friends and save 75%</h4>
+            <div _ngcontent-c5="" class="user_mail">
+              <input class="form-control_a" placeholder="" [(ngModel)]="firstemail" (blur)="offer()" type="text">
+            </div>
+            <div _ngcontent-c5="" class="user_mail">
+              <input class="form-control_a" placeholder=""  type="text">
+            </div>
+            <div _ngcontent-c5="" class="user_mail">
+              <input class="form-control_a" placeholder="" type="text">
+            </div>
+            <p class="f_friend">For every friend that fully signs up to use Remi studios. we'll give you 25% off-forever.</p>
+            <p class="f_friend">This is a special offer for our greatly apprecieated beta users</p>
+          </div>
+        </div>
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6"  *ngIf="!isHidden">
+          <div class="email">
+          <h4 align="center">Select a Beta Plan</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="stand">
+                <h4 class="stnd_h">Standard</h4>
+                <h2 class="">$22.00</h2>
+                <small>per month if they sign up.</small>
+                
+                <p class="f_friend2">
+                  Top features<br>
+                  Daily US Stock Data Built in<br>
+                  Daily Crypto Data Built in
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stand">
+                <h4 class="stnd_h">Plus</h4>
+                <h2 class="">$41.00</h2>
+                <small>per month</small>
+                <p class="f_friend2">
+                  Intraday US Stock Data Built in<br>
+                  Intraday Crypto Data Built in
+                </p>
+                <small>Can train multiple models simultaneously</small>
+              </div>
+            </div>
+          </div>
+
+          <br>
+           <!--  <button class="next pull-right"   (click)="addCard()">Next</button> -->
+
+          </div>
+        </div>
+         <div class="col-md-6"  *ngIf="isHidden">
+          <div class="email">
+          <h4 class="stnd_he" align="center">Select a Beta Plan</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="stand">
+                <h4 class="stnd_h">Standard</h4>
+                <h2 class="stnd_i">$22.00</h2>
+                <small>per month if they sign up.</small>
+                <hr>
+                <p class="f_friend2">
+                  $41.00 if they dont
+                </p>
+                <p class="feature">
+                  Top features<br>
+                  Daily US Stock Data Built in<br>
+                  Daily Crypto Data Built in
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stand">
+                <h4 class="stnd_h">Plus</h4>
+                <h2 class="stnd_i">$41.00</h2>
+                 <small>per month if they sign up.</small>
+                 <hr>
+                 <p class="f_friend2">
+                  $41.00 if they dont
+                </p>
+                <p class="feature">
+                  Top Feature
+                <br>
+                 
+                  Intraday US Stock Data Built in<br>
+                  Intraday Crypto Data Built in
+                </p>
+                <small>Can train multiple models simultaneously</small>
+              </div>
+            </div>
+          </div>
+
+          <br>
+            <button class="next pull-right"   (click)="addCard()">Next</button>
+
+          </div>
+        </div>
+      </div>
+    </div>

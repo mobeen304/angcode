@@ -1,0 +1,107 @@
+<div class="container largr_pd">
+   <div class="row">
+      <div class="col-md-4">
+         <p style="margin-bottom: 0;"  *ngIf="istitleHidden">Time Series Predictions</p>
+         <small class="ethe_um" *ngIf="istitleHidden"> Prediction <a href="javascript:void(0)" class="ank_color"> Drag and drop</a> data here {{viewType}}</small>
+      </div>
+      <div class="col-md-8" align="center">
+         <small _ngcontent-c7="" style="position: relative;top: 20px;">drag and drop data Here</small>
+      </div>
+   </div>
+   <br>
+   <div class="row">
+      <div class="col-md-4">
+         <div class="l_tabs" [dndDropzone]="Dropcolumn" 
+               [dndDisableIf]="!dropzoneEnabled"
+               (dndDrop)="onReverseDrop($event)">
+            <p>Data to help me make prediction</p>
+            <small>Which column you want to feed your ai to help you predict</small>
+            <br>
+            <br>
+            <ul class="nav nav-pills ver_t" >
+               <li  *ngFor="let side of sideColumn.variables;let j = index" class="active" >
+                  <a *ngIf="side.name!='time' && side.type!='Discrete'" data-toggle="pill"  [dndDraggable]="side.name"
+                  [dndEffectAllowed]="'copy'"
+                  [dndDisableIf]="false"
+                  [dndType]="side.name"
+                  (dndStart)="onDragStart($event)"
+                  (dndCopied) = "onDragged(side.name, allColumn)"
+                  (dndEnd)="onDragEnd($event,j)" > {{side.name}}</a>
+                  <a *ngIf="side.name=='time'" data-toggle="pill"  [dndDraggable]="side.name"
+                  [dndEffectAllowed]="'copy'"
+                  [dndDisableIf]="false"
+                  (dndStart)="onDragStart($event)"
+                  [dndDraggable]="side.name"
+                  [dndType]="side.name"
+                  (dndCopied) = "onDragged(side.name, allColumn)"
+                  (dndEnd)="onDragEnd($event,j)" >Timestamp</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-8">
+         <div class="tab-content">
+            <div class="row">
+               <!-- <div class="col-md-9"   -->
+               <div class="col-md-9 ovr_srol"  [dndDropzone]="Dropcolumn"
+               dndDragoverClass="custom-drag-over"
+               [dndDisableIf]="!dropzoneEnabled"
+               (dndDrop)="onDrop($event)" style="border-right: 2px solid #000; min-height: 350PX; overflow: scroll;">
+               <div class="scroll_tab_x">
+                  <div class="data_c">
+                     <ul class="tbleul">
+                        <li class="tli" *ngFor="let hvl of column; let i = index">
+                           <table class="table tb_height" *ngIf="sData[i]?.length > 0">
+                              <thead>
+                                 <tr  >
+                                    <td [dndDraggable]="hvl" [dndType]="hvl"
+                                    (dndStart)="onDragStart($event)">
+                                    <p style="color: #ccc;"> {{hvl}} </p>
+                                    </td>
+                                 </tr>
+                              </thead>
+                              <tbody class="l_height">
+                                 <tr *ngFor="let hvlt of sData[i]">
+                                    <td *ngIf="IsNumber(hvlt)">{{hvlt| number : '1.1-2'}}</td>
+                                    <td *ngIf="!IsNumber(hvlt)">{{hvlt}}</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
+                     </ul>
+                  </div>
+                  <p *ngIf="hideInfo" style="text-align: center;padding-top: 8.3em;">The data to use in helping me <br>predict</p>
+                  <br>
+                  <p *ngIf="hideInfo" style="text-align: center;color: #20dca1;
+                     bottom:8px;position: absolute;left: 0px; right: 0px;">Last 5 Time Steps</p>
+               </div>
+            </div>
+            <div class="col-md-3" [dndDropzone]="Dropcolumn"
+            dndDragoverClass="custom-drag-over"
+            [dndDisableIf]="!isHidden"
+            (dndDrop)="onCloseDrop($event)">
+            <div class="scroll_tab_y">
+               <div class="data_d">
+                  <table class="table t_hght2"  *ngIf="iscloseHidden">
+                     <tbody>
+                        <tr>
+                           <td [dndDraggable]="predict_clmn" [dndType]="predict_clmn"
+                                    (dndStart)="onDragStart($event)"><p style="color: #21f3b2;"> {{predict_clmn}} </p></td>
+                        </tr>
+                        <tr *ngFor="let hvlt of cData[0]">
+                           <td *ngIf="IsNumber(hvlt)" >{{hvlt  | number : '1.1-2'}}</td>
+                           <td *ngIf="!IsNumber(hvlt)" >{{hvlt}}</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <p *ngIf="!cData[0]?.length > 0" style="text-align: center;margin-top: 8.3em;">The column you want to predict</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <br><br>
+   <button  class="green-dot-button btn_action pull-right" [disabled]="doNEXT" (click)="TrainingView()" style="width:20%">Next</button>
+</div>
+</div>
+</div>

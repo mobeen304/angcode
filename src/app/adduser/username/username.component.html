@@ -1,0 +1,25 @@
+ <div class="container">
+   
+      <div class="row">
+        <div class="col-md-3">
+           <form [formGroup]="userForm" (ngSubmit)="next(value)">
+            <div class="email">
+              <p>What is your email?</p>
+              <div _ngcontent-c5="" class="user_mail">
+                <input class="form-control_a" placeholder="" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+              </div>
+              <small>This will be your username.</small>
+              <br>
+              <button class="next" type="submit">Next</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-9"></div>
+      </div>
+
+    </div>
+

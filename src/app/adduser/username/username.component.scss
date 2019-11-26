@@ -1,0 +1,29 @@
+body{
+    background-color: #282828;
+  }
+  .form-control_a {
+    background-color: #282828;
+    color: #fff;
+    border: 1px solid #8c8c8c;
+    padding: 4px 10px;
+    width: 100%;
+  }
+  p,small{
+    color: #fff;
+  }
+  button.next {
+    background-color: #0000;
+    border: 1px dashed #01bfb6;
+    color: #fff;
+    padding: 4px 21px;
+    margin-top: 30px;
+  }
+  .email {
+    margin-top: 3em;
+}
+ input:focus{
+    border: 1px solid #8c8c8c !important;
+ }
+.invalid-feedback{
+  display:block;
+}
